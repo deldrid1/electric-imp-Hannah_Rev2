@@ -68,9 +68,13 @@ The only thing you are required to do is to connect the webpage to your agent in
     var agentBaseURL ="https://agent.electricimp.com/YOUR_AGENT_ID_HERE";
     
 You can launch index.html directly and everything *should* work correctly (but may not due to browser security policies).  A nodeServer.js file is also included to be a static file webserver using [Node.js] if you are so inclined.  (For those unfamiliar with Node and wanting to jump in I recommend the [Node Version Manager] for a simple installation.  You will also need to run the command 
+    
     npm install express 
+
 from your working directory for 
+
     node nodeServer.js
+
 to work correctly.
 
 To Do items
