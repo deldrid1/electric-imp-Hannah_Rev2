@@ -510,7 +510,8 @@ http.onrequest(function(request,res){
     	    htmlResponse(SERVICE_UNAVAILABLE_HTML_TITLE, SERVICE_UNAVAILABLE_HTML_BODY, 503)
         } else if(request.path == "/LongPoll"){
             LongPollListeners[RequestID] <- res;
-            imp.wakeup(59.9, function(id = RequestID){
+            local id = RequestID;	//Will remain in scope for the lambda callback function passed to imp.wakeup and gets around the "bad callback for imp.wakeup: must take 0 parameters" error
+            imp.wakeup(59.9, function(){
                 if(id in LongPollListeners){
                     server.log("Removing LongPoll RequestID " + id);
                     local res = LongPollListeners[id];
