@@ -74,7 +74,7 @@ $( document ).ready(function() {
 	var ErrorCount = 0;
 	(function poll(){
 		//We send two requests with every poll - One to get/sync the current state and another to setup a longpoll request for any push updates
-		
+		//A good Long polling example is at http://techoctave.com/c7/posts/60-simple-long-polling-example-with-javascript-and-jquery
 		if(ErrorCount >= 3){
 			ErrorCount = 0;
 			console.log("Resetting Error Count and Delaying next Poll Call for 5 seconds");
