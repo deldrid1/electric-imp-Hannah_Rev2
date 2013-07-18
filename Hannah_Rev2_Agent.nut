@@ -764,6 +764,10 @@ function sendMailGun(toEmail, subject, message){
 /*******************************************************************************
     XIVELY CLASS
 *******************************************************************************/
+/* Code take from beardedinventor at https://github.com/beardedinventor/electricimp/tree/master/Xively under the MIT License (MIT)
+Copyright (c) 2013 electric imp, inc
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
 // This is a way to make a "namespace"
 Xively <- {
     FEED_ID = "FEED_ID" // Replace with your Feed ID
@@ -937,12 +941,12 @@ function send_xively(feed_id, api_key, body) {  //feed_id and api_key are string
             Code    Meaning                 Action Required
             200 	OK 	Request             processed successfully.
             400 	Bad Request 	        Something is wrong with your headers or body formatting. Check your request against examples.
-            401 	Not Authorized 	        Either you need to provide authentication credentials, or the credentials provided aren’t valid. Check your API key.
+            401 	Not Authorized 	        Either you need to provide authentication credentials, or the credentials provided arenï¿½t valid. Check your API key.
             403 	Forbidden 	            Xively understands your request, but refuses to fulfil it. An accompanying error message should explain why.(NOTE: in the V2 API, this is the error returned when the API rate limit is exceeded.)
-            404 	Not Found 	            Either you’re requesting an invalid URI or the resource in question doesn’t exist (eg. no such feed). Check your HTTP method. See below.
+            404 	Not Found 	            Either youï¿½re requesting an invalid URI or the resource in question doesnï¿½t exist (eg. no such feed). Check your HTTP method. See below.
             406 	Not Acceptable 	        You have most likely specified the wrong document type. Try JSON by using .json at the end of your URL.
-            422 	Unprocessable Entity 	Xively was unable to create a feed because the EEML/JSON was not complete/valid (e.g. it didn’t include a “title” element). Check your body against examples.
-            500 	Internal Server Error 	Something went wrong… Please post to the forum about it and we will investigate.
+            422 	Unprocessable Entity 	Xively was unable to create a feed because the EEML/JSON was not complete/valid (e.g. it didnï¿½t include a ï¿½titleï¿½ element). Check your body against examples.
+            500 	Internal Server Error 	Something went wrongï¿½ Please post to the forum about it and we will investigate.
             503 	No server error 	    Usually occurs when there are too many requests coming into Xively - if you get this from an API request then the error message will be returned in XML in the response.
             */
             server.log(resp.statuscode + " Error sending message to Xively: "+resp.body);
